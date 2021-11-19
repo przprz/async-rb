@@ -1,5 +1,7 @@
 # Playing around with `async` Ruby
 
+Based on https://brunosutic.com/blog/async-ruby
+
 ## Prerequisites:
 
 * `rvm install 3.0.1`
