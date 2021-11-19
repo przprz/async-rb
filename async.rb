@@ -3,16 +3,10 @@ require "async/http/internet"
 require "redis"
 require "sequel"
 
-# prerequisites:
-# * rvm use 3.0.1
-# * bundle
-# * set postgresql max_connections to 1000
-# * bump max number of open file descriptors: ulimit -n 1000
-
 DB = Sequel.connect('postgres://pawelprzeniczny@127.0.0.1:5432/cockpit_development', max_connections: 1000)
 Sequel.extension(:fiber_concurrency)
 
-N = 300 #
+N = 300 # TODO: try higher values
 
 # Warming up redis clients
 redis_clients = 1.upto(N).map { Redis.new.tap(&:ping) }
