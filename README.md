@@ -12,6 +12,6 @@
 ## Running
 
 ```
-ruby async.rb
+ruby async.rb [db_user, db_name]
 ```
 

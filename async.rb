@@ -5,7 +5,10 @@ require "async/http/internet"
 require "redis"
 require "sequel"
 
-DB = Sequel.connect('postgres://pawelprzeniczny@127.0.0.1:5432/cockpit_development', max_connections: 1000)
+db_user = ARGV[0] || 'pawelprzeniczny'
+db_name = ARGV[1] || 'cockpit_development'
+
+DB = Sequel.connect("postgres://#{db_user}@127.0.0.1:5432/#{db_name}", max_connections: 1000)
 Sequel.extension(:fiber_concurrency)
 
 N = 300 # TODO: try higher values
