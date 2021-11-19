@@ -1,3 +1,5 @@
+# taken from https://brunosutic.com/blog/async-ruby#
+
 require "async"
 require "async/http/internet"
 require "redis"
